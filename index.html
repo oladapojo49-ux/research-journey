@@ -1,0 +1,988 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Research Journey</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="One-to-one research mentoring in Abuja and online. 12 weeks from first idea to defended proposal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: chocolate bands alternating with beige grounds; one centred 1240px column, a single caramel accent. */
+:root {
+  --choc-950: #21120B; --choc-900: #2B1810; --choc-850: #3A2318; --choc-800: #4A2C1D; --choc-700: #5A3725; --choc-600: #7A4E35;
+  --beige-50: #FBF6EE; --beige-100: #F4EBDD; --beige-200: #E9DCC6; --beige-300: #D9C7AC; --beige-400: #B8A088; --beige-500: #CDB89C;
+  --ink: #3A2519; --ink-2: #5C4334; --ink-3: #6E5444; --rust: #8A5526; --rust-2: #7A4520;
+  --accent: #D9A56A; --accent-2: #E0B27A;
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--beige-100); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; }
+a { color: var(--choc-800); }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.band { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1240px; margin: 0 auto; }
+.dark { background: var(--choc-900); color: var(--beige-100); }
+.tan { background: var(--beige-200); }
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rust); margin-bottom: 12px; }
+.dark .eyebrow { color: var(--accent); }
+.tan .eyebrow { color: var(--rust-2); }
+.h2 { font-size: clamp(32px, 3.6vw, 46px); line-height: 1.15; color: var(--choc-900); margin-bottom: 36px; }
+.dark .h2 { color: var(--beige-50); }
+.sec { padding-block: 104px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 28px; border-radius: 999px; font-weight: 600; font-size: 16px; text-decoration: none; }
+.btn-accent { background: var(--accent); color: var(--choc-900); }
+.btn-accent:hover { background: var(--accent-2); color: var(--choc-900); }
+.btn-ghost { border: 1px solid var(--choc-600); color: var(--beige-100); font-weight: 500; }
+.btn-ghost:hover { border-color: var(--accent); color: var(--beige-50); }
+.btn-line { border: 1px solid var(--choc-800); color: var(--choc-800); justify-content: center; }
+.btn-line:hover { background: var(--choc-800); color: var(--beige-50); }
+.card { background: var(--beige-50); border: 1px solid var(--beige-300); border-radius: 20px; padding: 28px; }
+.grid { display: grid; gap: 16px; }
+.g4 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.g5 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.g3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.chip { padding: 8px 14px; border-radius: 999px; background: var(--beige-200); font-size: 14px; color: var(--choc-800); }
+
+/* nav */
+.nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding-block: 16px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--beige-50); text-decoration: none; font-family: var(--display); font-size: 22px; font-weight: 600; }
+.mark { width: 36px; height: 36px; border-radius: 10px; background: var(--accent); color: var(--choc-900); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 20px; }
+.links { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+.links a { color: var(--beige-200); text-decoration: none; padding: 10px 12px; font-size: 15px; }
+.links a:hover { color: var(--beige-50); }
+.links .btn { color: var(--choc-900); min-height: 44px; padding: 0 20px; font-size: 15px; margin-left: 8px; }
+
+/* hero */
+.hero { padding-block: 56px 112px; overflow: hidden; }
+.hero-row { display: flex; flex-wrap: wrap; gap: 56px; align-items: center; }
+.hero-copy { flex: 999 1 520px; min-width: 0; }
+.pill { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px; border: 1px solid var(--choc-700); border-radius: 999px; font-size: 14px; color: var(--beige-200); margin-bottom: 22px; }
+.pill i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.hero h1 { font-size: clamp(46px, 6.4vw, 88px); line-height: 1.0; letter-spacing: -0.02em; color: var(--beige-50); margin-bottom: 24px; }
+.hero h1 em { font-weight: 500; color: var(--accent); }
+.lede { font-size: 20px; color: var(--beige-200); max-width: 520px; margin-bottom: 34px; }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.master { margin-top: 40px; }
+.master p { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--beige-400); margin-bottom: 12px; }
+.tools { display: flex; flex-wrap: wrap; gap: 8px; }
+.tools span { padding: 8px 14px; border-radius: 10px; background: var(--choc-850); font-size: 14px; color: var(--beige-100); }
+.tools .secret { display: inline-flex; align-items: center; gap: 6px; background: none; border: 1px dashed var(--accent); color: var(--accent); }
+.visual { flex: 1 1 400px; min-width: 0; position: relative; height: 540px; }
+/* hero: a research workstation looping search → read → check → write */
+.app { position: absolute; inset: 8px 0; background: var(--beige-50); border-radius: 18px; overflow: hidden; box-shadow: 0 30px 70px rgba(10, 5, 2, 0.55); display: flex; flex-direction: column; color: var(--ink); }
+.app-bar { display: flex; align-items: center; gap: 7px; padding: 0 14px; height: 40px; flex: none; background: var(--choc-950); font-size: 13px; }
+.app-bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--choc-700); }
+.app-bar .t { margin-left: 8px; color: var(--beige-200); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.steps-bar { display: flex; gap: 6px; padding: 8px 10px; flex: none; background: var(--beige-200); }
+.st { flex: 1; min-width: 0; display: flex; align-items: center; justify-content: center; gap: 6px; height: 34px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 12px; font-weight: 600; color: var(--ink-3); cursor: pointer; transition: background 0.3s, color 0.3s; }
+.st:hover { background: var(--beige-300); color: var(--choc-900); }
+.st:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.st.on:hover { background: var(--choc-800); color: var(--beige-50); }
+.st b { flex: none; width: 18px; height: 18px; border-radius: 50%; background: var(--beige-300); color: var(--choc-800); font-size: 11px; display: flex; align-items: center; justify-content: center; }
+.st.on { background: var(--choc-800); color: var(--beige-50); }
+.st.on b { background: var(--accent); color: var(--choc-900); }
+.stage { position: relative; flex: 1; overflow: hidden; }
+.scn { position: absolute; inset: 0; padding: 18px; opacity: 0; transition: opacity 0.5s; display: flex; flex-direction: column; gap: 12px; }
+.scn.on { opacity: 1; }
+.white { background: #FFFFFF; border: 1px solid var(--beige-200); border-radius: 12px; }
+.caret { display: inline-block; width: 2px; height: 1.05em; background: var(--choc-800); vertical-align: -3px; margin-left: 1px; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.bars span { display: block; height: 7px; border-radius: 4px; background: var(--beige-300); margin-top: 8px; }
+.scn { padding: 0; gap: 0; background: #FFFFFF; }
+.stage { background: #FFFFFF; }
+.serif { font-family: "Times New Roman", Times, Georgia, serif; }
+.link { color: #1F4BB8; }
+/* 1 · scholar search */
+.gs-top { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-bottom: 1px solid #E6E2DC; }
+.gs-logo { font-family: var(--display); font-weight: 700; font-size: 15px; color: var(--choc-800); white-space: nowrap; }
+.sbox { flex: 1; min-width: 0; display: flex; align-items: center; gap: 8px; min-height: 34px; padding: 0 12px; border: 1px solid #D5CFC6; border-radius: 6px; font-size: 12px; color: #1E1410; background: #FFFFFF; overflow: hidden; white-space: nowrap; }
+.sbox svg { flex: none; }
+.sbox .qwrap { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.op { color: #B4561E; font-weight: 700; }
+.gs-body { flex: 1; min-height: 0; display: flex; gap: 12px; padding: 10px 12px; overflow: hidden; }
+.gs-side { flex: 0 0 88px; display: flex; flex-direction: column; gap: 5px; font-size: 11px; color: #6B6259; }
+.gs-side .on { color: #B4561E; font-weight: 600; }
+.gs-side hr { width: 100%; border: 0; border-top: 1px solid #E6E2DC; margin: 4px 0; }
+.gs-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 9px; }
+.gs-count { font-size: 10.5px; color: #6B6259; }
+.res { padding-bottom: 9px; border-bottom: 1px solid #EFEBE5; opacity: 0; transform: translateY(6px); transition: opacity 0.4s, transform 0.4s; }
+.res:nth-child(3) { transition-delay: 0.25s; }
+.res:nth-child(4) { transition-delay: 0.5s; }
+.show .res { opacity: 1; transform: none; }
+.res .rt { display: flex; gap: 8px; justify-content: space-between; font-size: 12.5px; line-height: 1.3; color: #1F4BB8; }
+.res .pdf { flex: none; font-size: 10px; color: #1F4BB8; }
+.res .au { font-size: 10.5px; color: #4F7A3A; margin-top: 2px; }
+.res .sn { font-size: 11px; line-height: 1.4; color: #3B342E; margin-top: 3px; }
+.res .lk { display: flex; flex-wrap: wrap; gap: 10px; font-size: 10.5px; color: #1F4BB8; margin-top: 3px; }
+/* 2 · pdf reader */
+.pv-bar { display: flex; align-items: center; gap: 12px; padding: 7px 12px; background: #3A3532; color: #EDE7DF; font-size: 11px; }
+.pv-bar .tool { padding: 3px 7px; border-radius: 4px; }
+.pv-bar .tool.on { background: #D9A56A; color: #2B1810; font-weight: 600; }
+.pv-bar .sp { flex: 1; }
+.pv-desk { flex: 1; min-height: 0; background: #6E6863; padding: 12px; overflow: hidden; }
+.pv-page { position: relative; height: 100%; background: #FFFFFF; padding: 16px 18px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); color: #1E1410; overflow: hidden; }
+.pv-page .jr { font-size: 9.5px; color: #6B6259; border-bottom: 1px solid #E6E2DC; padding-bottom: 5px; display: flex; justify-content: space-between; gap: 8px; }
+.pv-page h4 { margin: 10px 0 3px; font-size: 15px; line-height: 1.25; text-align: center; font-weight: 700; }
+.pv-page .au { text-align: center; font-size: 10.5px; font-style: italic; color: #3B342E; }
+.pv-page .ab { margin-top: 10px; font-size: 11.5px; line-height: 1.55; text-align: justify; }
+.pv-page .ab b { font-size: 11px; letter-spacing: 0.04em; }
+.pv-page .kw { margin-top: 6px; font-size: 10.5px; color: #3B342E; }
+.hl { background-image: linear-gradient(rgba(217, 165, 106, 0.6), rgba(217, 165, 106, 0.6)); background-repeat: no-repeat; background-size: 0% 100%; transition: background-size 1.1s ease-out; }
+.show .hl { background-size: 100% 100%; }
+.show .hl.h2x { transition-delay: 1.1s; }
+.sticky { position: absolute; right: 10px; bottom: 12px; max-width: 150px; padding: 8px 10px; border-radius: 6px; background: #F6D58E; color: #2B1810; font-family: var(--body); font-size: 11px; font-weight: 600; line-height: 1.35; transform: rotate(2deg) scale(0.9); opacity: 0; transition: opacity 0.4s 2.2s, transform 0.4s 2.2s; box-shadow: 0 6px 14px rgba(43, 24, 16, 0.28); }
+.sticky small { display: block; font-size: 9.5px; font-weight: 500; color: #6B4A1E; }
+.show .sticky { opacity: 1; transform: rotate(2deg); }
+/* 3 · similarity report */
+.sr-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 12px; border-bottom: 1px solid #E6E2DC; font-size: 12px; font-weight: 600; color: #1E1410; }
+.ai-chip { font-size: 10.5px; font-weight: 600; padding: 3px 8px; border-radius: 999px; background: #E7F0E4; color: #2F5E28; }
+.sr-body { flex: 1; min-height: 0; display: flex; gap: 12px; padding: 12px; overflow: hidden; }
+.sr-left { flex: 0 0 118px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.ring { position: relative; width: 96px; height: 96px; flex: none; }
+.ring svg { width: 96px; height: 96px; transform: rotate(-90deg); }
+.ring circle { fill: none; stroke-width: 10; }
+.ring .bg { stroke: #EFEBE5; }
+.ring .fg { stroke: #C0392B; stroke-linecap: round; stroke-dasharray: 289; stroke-dashoffset: 289; transition: stroke-dashoffset 1.2s ease-out; }
+.show .ring .fg { stroke-dashoffset: 269; }
+.ring .pct { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: var(--display); font-size: 26px; font-weight: 700; color: #1E1410; line-height: 1; }
+.ring .pct small { font-family: var(--body); font-size: 8.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #6B6259; margin-top: 4px; }
+.brk { width: 100%; font-size: 10.5px; color: #3B342E; }
+.brk div { display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px solid #EFEBE5; }
+.brk b { font-weight: 700; }
+.sr-right { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.sr-doc { font-size: 10.5px; line-height: 1.55; color: #3B342E; text-align: justify; border: 1px solid #EFEBE5; border-radius: 6px; padding: 8px 10px; }
+.m1, .m2, .m3 { padding: 0 1px; border-radius: 2px; }
+.m1 { background: #F7C6C0; } .m2 { background: #CFE0F5; } .m3 { background: #D8EBC9; }
+.sr-doc sup { font-size: 8px; font-weight: 700; }
+.match { display: flex; align-items: center; gap: 8px; font-size: 10.5px; color: #3B342E; padding: 4px 0; border-bottom: 1px solid #EFEBE5; }
+.match:last-child { border-bottom: 0; }
+.match i { flex: none; width: 16px; height: 16px; border-radius: 3px; color: #FFFFFF; font-style: normal; font-size: 9.5px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.match span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.match b { font-weight: 700; }
+/* 4 · word processor */
+.wd-tabs { display: flex; gap: 12px; padding: 6px 12px 0; background: #F3F1EE; font-size: 10.5px; color: #3B342E; white-space: nowrap; overflow: hidden; }
+.wd-tabs span { padding-bottom: 5px; }
+.wd-tabs .on { color: #1E1410; font-weight: 700; border-bottom: 2px solid var(--choc-800); }
+.wd-tools { display: flex; align-items: center; gap: 6px; padding: 6px 10px; background: #F3F1EE; border-bottom: 1px solid #E0DCD6; overflow: hidden; }
+.wd-tools .sel { font-size: 10.5px; padding: 3px 7px; border: 1px solid #D5CFC6; border-radius: 4px; background: #FFFFFF; white-space: nowrap; }
+.wd-tools .b { flex: none; width: 22px; height: 22px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #1E1410; }
+.wd-tools .b.on { background: #E0DCD6; }
+.wd-tools .div { flex: none; width: 1px; height: 18px; background: #D5CFC6; }
+.wd-tools .style { flex: none; font-size: 10px; padding: 3px 8px; border: 1px solid #D5CFC6; border-radius: 4px; background: #FFFFFF; white-space: nowrap; }
+.wd-tools .style.on { border-color: var(--choc-800); }
+.wd-ruler { height: 12px; margin: 0 28px; background: repeating-linear-gradient(90deg, #C9C2B8 0 1px, transparent 1px 12px) bottom / 100% 5px no-repeat, #FFFFFF; border-bottom: 1px solid #E0DCD6; }
+.wd-desk { flex: 1; min-height: 0; background: #E4E0DA; padding: 10px 16px 0; overflow: hidden; }
+.wd-page { height: 100%; background: #FFFFFF; padding: 18px 22px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); color: #1E1410; overflow: hidden; }
+.wd-page h4 { margin: 0; font-size: 13px; font-weight: 700; text-align: center; }
+.wd-page h5 { margin: 8px 0 4px; font-size: 12px; font-weight: 700; }
+.wd-page p { font-size: 11.5px; line-height: 1.75; text-align: justify; text-indent: 24px; }
+.wd-status { display: flex; justify-content: space-between; gap: 10px; padding: 4px 12px; background: var(--choc-800); color: var(--beige-100); font-size: 10px; white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { .caret { animation: none; } .scn, .res, .hl::after, .sticky, .ring .fg { transition: none; } }
+.float { z-index: 3; position: absolute; background: var(--beige-50); color: var(--choc-900); border-radius: 16px; padding: 14px 18px; display: flex; align-items: center; gap: 12px; box-shadow: 0 12px 30px rgba(33, 18, 11, 0.28); animation: rise 0.7s ease-out both; }
+.float small { display: block; font-size: 12px; color: var(--ink-3); }
+.float b { font-size: 15px; font-weight: 600; }
+.float .n { width: 36px; height: 36px; border-radius: 50%; background: var(--beige-200); display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 700; color: var(--choc-800); }
+.f1 { left: -8px; top: 22px; }
+.f3 { right: -8px; bottom: 22px; background: var(--accent); animation-delay: 0.3s; }
+.f3 small { color: var(--choc-900); }
+@keyframes rise { from { transform: translateY(12px); } to { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .float { animation: none; } }
+
+/* light hero: graph paper, chocolate type */
+.topbar { background: var(--beige-50); border-bottom: 1px solid var(--beige-300); }
+.topbar .brand { color: var(--choc-900); }
+.topbar .links a { color: var(--ink-2); }
+.topbar .links a:hover { color: var(--choc-900); }
+.topbar .links .btn { background: var(--choc-800); color: var(--beige-50); }
+.topbar .links .btn:hover { background: var(--choc-900); color: var(--beige-50); }
+.hero { position: relative; background: var(--beige-100); color: var(--ink); padding-block: 64px 24px; }
+.hero::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(rgba(74, 44, 29, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(74, 44, 29, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  -webkit-mask-image: linear-gradient(#000 55%, transparent); mask-image: linear-gradient(#000 55%, transparent); }
+.hero > .wrap { position: relative; }
+.hero .pill { background: var(--beige-50); border-color: var(--beige-300); color: var(--ink-2); }
+.hero .pill i { background: var(--rust); }
+.hero h1 { color: var(--choc-900); }
+.hero h1 em { color: var(--rust); background: linear-gradient(transparent 64%, rgba(217, 165, 106, 0.5) 64%); padding: 0 4px; }
+.hero .lede { color: var(--ink-2); }
+.hero .btn-accent { background: var(--choc-800); color: var(--beige-50); }
+.hero .btn-accent:hover { background: var(--choc-900); color: var(--beige-50); }
+.hero .btn-ghost { border-color: var(--choc-800); color: var(--choc-800); }
+.hero .btn-ghost:hover { background: var(--choc-800); color: var(--beige-50); }
+.hero .master p { color: var(--ink-3); }
+.hero .tools span { background: var(--beige-50); border: 1px solid var(--beige-300); color: var(--choc-800); }
+.hero .tools .secret { background: none; border: 1px dashed var(--rust); color: var(--rust); }
+.hero .app { box-shadow: 0 28px 60px rgba(74, 44, 29, 0.28); border: 1px solid var(--beige-300); }
+
+/* campus scene */
+.campus { background: var(--beige-100); padding-block: 8px 0; }
+.campus svg { display: block; width: 100%; height: auto; max-width: 1240px; margin: 0 auto; overflow: visible; }
+.px { will-change: transform; }
+.walk { animation: stroll 13s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate; }
+.walk.b { animation-duration: 15s; animation-delay: -4s; }
+.bob { animation: bob 0.9s cubic-bezier(0.45, 0, 0.55, 1) infinite; }
+.leg { transform-box: fill-box; transform-origin: 50% 0; animation: swing 0.9s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate; }
+.leg.two { animation-direction: alternate-reverse; }
+.arm-swing { transform-box: fill-box; transform-origin: 10% 10%; animation: armswing 1.8s cubic-bezier(0.45, 0, 0.55, 1) infinite; }
+.float { animation: float 6s cubic-bezier(0.45, 0, 0.55, 1) infinite; }
+.float.d2 { animation-delay: -1.5s; } .float.d3 { animation-delay: -3s; } .float.d4 { animation-delay: -4.5s; }
+.flow { stroke-dasharray: 2 11; animation: flow 1.1s linear infinite; }
+.pulse { transform-box: fill-box; transform-origin: center; animation: pulse 2.4s ease-in-out infinite; }
+.beam { animation: beam 4s ease-in-out infinite; }
+@keyframes stroll { from { transform: translateX(-26px); } to { transform: translateX(34px); } }
+@keyframes bob { 50% { transform: translateY(-3px); } }
+@keyframes swing { from { transform: rotate(-16deg); } to { transform: rotate(16deg); } }
+@keyframes armswing { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(6deg); } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+@keyframes flow { to { stroke-dashoffset: -13; } }
+@keyframes pulse { 50% { transform: scale(1.35); opacity: 0.5; } }
+@keyframes beam { 0%, 100% { opacity: 0.55; } 50% { opacity: 0.9; } }
+@media (prefers-reduced-motion: reduce) { .walk, .bob, .leg, .arm-swing, .float, .flow, .pulse, .beam { animation: none; } }
+
+/* stats */
+.stats { margin-top: 28px; position: relative; background: var(--beige-50); border: 1px solid var(--beige-300); border-radius: 22px; padding: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; text-align: center; }
+.stats b { display: block; font-family: var(--display); font-size: 48px; line-height: 1; font-weight: 600; color: var(--choc-900); font-variant-numeric: tabular-nums; }
+.stats span { display: block; margin-top: 8px; font-size: 14px; color: var(--ink-3); }
+
+/* familiar */
+.familiar { padding-block: 120px 104px; }
+.fam-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 44px; }
+.fam-head h2 { font-size: clamp(40px, 5.2vw, 68px); line-height: 1.02; letter-spacing: -0.015em; color: var(--choc-900); max-width: 640px; }
+.fam-head h2 em { font-weight: 500; color: var(--rust); }
+.fam-head p { max-width: 340px; font-size: 18px; color: var(--ink-2); }
+.pains { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+.pain { position: relative; display: flex; flex-direction: column; background: var(--beige-50); border: 1px solid var(--beige-300); border-radius: 22px; overflow: hidden; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.pain:hover { transform: translateY(-4px); box-shadow: 0 22px 40px rgba(43, 24, 16, 0.14); }
+.pain .q { flex: 1; padding: 30px 28px 26px; }
+.pain .q::before { content: "“"; display: block; font-family: var(--display); font-size: 84px; line-height: 0.6; height: 34px; color: var(--accent); }
+.pain .q p { font-family: var(--display); font-size: 26px; line-height: 1.25; font-weight: 500; color: var(--choc-900); text-wrap: balance; }
+.pain .fix { display: flex; align-items: center; gap: 14px; padding: 18px 28px; background: var(--choc-900); color: var(--beige-100); }
+.pain .fix svg { flex: none; }
+.pain .fix small { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+.pain .fix span { display: block; font-size: 15px; font-weight: 500; }
+.fam-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 18px; margin-top: 44px; }
+.fam-foot p { font-family: var(--display); font-style: italic; font-size: 28px; color: var(--choc-900); }
+
+/* who */
+.who .ic { width: 52px; height: 52px; border-radius: 14px; background: var(--choc-800); display: flex; align-items: center; justify-content: center; }
+.who h3 { margin: 18px 0 6px; font-size: 22px; color: var(--choc-900); }
+.who p { font-size: 15px; color: var(--ink-2); }
+
+.fit { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 24px; }
+.fit > div { border-radius: 20px; padding: 26px 28px; }
+.fit-yes { flex: 2 1 420px; min-width: 0; background: var(--choc-900); color: var(--beige-100); }
+.fit-no { flex: 1 1 260px; min-width: 0; background: var(--beige-50); border: 1px dashed var(--beige-400); color: var(--ink-2); }
+.fit-k { font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 12px; }
+.fit-yes .fit-k { color: var(--accent); }
+.fit-no .fit-k { color: var(--rust); }
+.fit ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 17px; }
+.fit li { display: flex; gap: 12px; align-items: flex-start; }
+.fit-yes li::before { content: "✓"; flex: none; font-weight: 700; color: var(--accent); }
+.fit-no li::before { content: "✕"; flex: none; font-weight: 700; color: var(--rust); }
+
+/* journey */
+.jhead { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 44px; }
+.jhead .h2 { margin-bottom: 0; }
+.legend { display: flex; flex-wrap: wrap; gap: 20px; font-size: 14px; color: var(--choc-800); }
+.legend span { display: flex; align-items: center; gap: 8px; }
+.ring { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--choc-800); }
+.dot { width: 14px; height: 14px; border-radius: 50%; background: var(--choc-800); }
+.months { display: flex; flex-direction: column; gap: 28px; }
+.month { display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch; }
+.mhead { flex: 1 1 220px; min-width: 0; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; justify-content: flex-end; }
+.mhead small { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+.mhead b { display: block; margin-top: 6px; font-family: var(--display); font-size: 26px; line-height: 1.15; font-weight: 600; }
+.m1 { background: var(--beige-50); color: var(--choc-900); } .m1 small { color: var(--rust); }
+.m2 { background: var(--choc-800); color: var(--beige-50); } .m2 small { color: var(--accent-2); }
+.m3 { background: var(--choc-900); color: var(--beige-50); } .m3 small { color: var(--accent-2); }
+.weeks { flex: 999 1 600px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+.wk { background: var(--beige-50); border-radius: 16px; padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 10px; }
+.wk .top { display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: var(--ink-3); }
+.num { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 700; font-size: 16px; border: 2px solid var(--choc-800); color: var(--choc-800); }
+.wk.p .num { background: var(--choc-800); color: var(--beige-50); }
+.wk b { font-family: var(--display); font-size: 19px; line-height: 1.25; font-weight: 600; color: var(--choc-900); }
+.wk p { font-size: 14px; line-height: 1.45; color: var(--ink-2); }
+
+/* ai teaser */
+.ai { padding-block: 112px; }
+.ai-row { display: flex; flex-wrap: wrap; gap: 48px; align-items: center; }
+.ai-copy { flex: 1 1 380px; min-width: 0; }
+.ai h2 { font-size: clamp(36px, 4.4vw, 58px); line-height: 1.05; color: var(--beige-50); margin-bottom: 18px; }
+.ai h2 em { color: var(--accent); }
+.ai-copy > p:last-child { font-size: 18px; color: var(--beige-200); max-width: 440px; }
+.lockline { display: inline-flex; align-items: center; gap: 8px; }
+.locked { flex: 1 1 520px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.lk { background: var(--choc-850); border: 1px solid var(--choc-700); border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 14px; }
+.redact { align-self: flex-start; height: 26px; border-radius: 8px; background: repeating-linear-gradient(90deg, var(--choc-700) 0 10px, var(--choc-600) 10px 12px); }
+.lk b { font-family: var(--display); font-size: 20px; font-weight: 600; color: var(--beige-50); }
+
+/* steps */
+.steps { list-style: none; margin: 0; padding: 0; }
+.steps .big { font-family: var(--display); font-size: 56px; line-height: 1; font-weight: 600; color: var(--beige-300); margin-bottom: 14px; }
+.steps b { display: block; font-family: var(--display); font-size: 22px; font-weight: 600; color: var(--choc-900); margin-bottom: 4px; }
+.steps p { font-size: 15px; color: var(--ink-2); }
+.steps .last { background: var(--choc-800); border-color: var(--choc-800); }
+.steps .last .big { color: var(--accent); }
+.steps .last b { color: var(--beige-50); }
+.steps .last p { color: var(--beige-200); }
+
+/* mentor */
+.mentor { border-radius: 28px; padding: 40px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
+.mphoto { flex: 0 1 320px; min-width: 0; max-width: 100%; height: 400px; border-radius: 22px; overflow: hidden; background: var(--beige-200); }
+.mphoto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; display: block; }
+.mcopy { flex: 999 1 420px; min-width: 0; }
+.mcopy h2 { font-size: clamp(32px, 3.4vw, 44px); line-height: 1.1; color: var(--choc-900); margin-bottom: 6px; }
+.mcopy .role { font-size: 17px; color: var(--ink-2); margin-bottom: 22px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
+.motto { font-family: var(--display); font-style: italic; font-size: 22px; line-height: 1.4; color: var(--choc-800); }
+
+/* packages */
+.pk { display: flex; flex-direction: column; gap: 18px; border: none; border-radius: 22px; padding: 32px; position: relative; }
+.pk h3 { font-size: 24px; color: var(--choc-900); }
+.pk .sub { font-size: 15px; color: var(--ink-3); margin-top: 4px; }
+.pk .price { font-family: var(--display); font-size: 40px; line-height: 1; font-weight: 600; color: var(--choc-900); font-variant-numeric: tabular-nums; }
+.pk ul { margin: 0; padding-left: 20px; font-size: 15px; color: var(--ink-2); }
+.pk .btn { margin-top: auto; }
+.pk.feat { background: var(--choc-900); color: var(--beige-100); }
+.pk.feat h3 { color: var(--beige-50); }
+.pk.feat .sub, .pk.feat .per { color: var(--beige-500); }
+.pk.feat .price { font-size: 44px; color: var(--accent); }
+.pk.feat .per { font-size: 14px; margin-top: 6px; }
+.pk.feat ul { color: var(--beige-200); }
+.pk.feat .btn { justify-content: center; }
+.badge { position: absolute; top: -13px; left: 32px; padding: 5px 14px; border-radius: 999px; background: var(--accent); color: var(--choc-900); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.note { margin-top: 20px; font-size: 14px; color: var(--ink-2); }
+
+/* stories */
+.story { margin: 0; border: 1px dashed var(--beige-400); }
+.story blockquote { margin: 0 0 18px; font-family: var(--display); font-size: 20px; line-height: 1.4; color: var(--ink-3); }
+.story figcaption { font-size: 14px; color: var(--ink-3); }
+
+/* faq */
+.faq { max-width: 860px; margin: 0 auto; }
+.faq .h2 { text-align: center; margin-bottom: 28px; }
+.faq-list { display: flex; flex-direction: column; gap: 10px; }
+details { background: var(--beige-50); border: 1px solid var(--beige-300); border-radius: 16px; padding: 0 22px; }
+summary { cursor: pointer; list-style: none; padding: 20px 0; font-weight: 600; font-size: 17px; color: var(--choc-900); display: flex; justify-content: space-between; gap: 16px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font-family: var(--display); font-size: 24px; line-height: 1; color: var(--rust); }
+details[open] summary::after { content: "–"; }
+details p { padding-bottom: 20px; color: var(--ink-2); }
+
+/* cta */
+.cta { border-radius: 32px; padding: 80px 32px; text-align: center; position: relative; overflow: hidden; }
+.cta .o1 { position: absolute; width: 380px; height: 380px; border-radius: 50%; left: -140px; top: -160px; background: var(--choc-850); }
+.cta .o2 { position: absolute; width: 300px; height: 300px; border-radius: 50%; right: -100px; bottom: -140px; background: var(--choc-800); }
+.cta-in { position: relative; max-width: 680px; margin: 0 auto; }
+.cta h2 { font-size: clamp(38px, 5vw, 64px); line-height: 1.04; color: var(--beige-50); margin-bottom: 16px; }
+.cta h2 em { color: var(--accent); }
+.cta .lede { margin: 0 auto 32px; }
+.contact { margin-top: 28px; font-size: 15px; color: var(--beige-200); user-select: all; }
+
+footer { background: var(--choc-950); color: var(--beige-500); font-size: 14px; padding-block: 28px; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+.wa { position: fixed; right: calc(20px + env(safe-area-inset-right, 0px)); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); width: 60px; height: 60px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(43, 24, 16, 0.35); z-index: 10; }
+.wa:hover { background: var(--accent-2); }
+
+@media (max-width: 560px) {
+  .visual { height: 480px; }
+  .st span { display: none; }
+  .gs-side { display: none; }
+  .sr-left { flex-basis: 100px; }
+  .wd-tools .style:nth-of-type(n+2) { display: none; }
+  .locked { grid-template-columns: 1fr; }
+  .mentor { padding: 24px; }
+  .cta { padding: 56px 20px; }
+  .links a:not(.btn) { display: none; }
+}
+</style>
+
+</head>
+<body>
+<header class="band topbar">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="#top"><span class="mark" aria-hidden="true">R</span>Research Journey</a>
+    <div class="links">
+      <a href="#for">Who it’s for</a>
+      <a href="#journey">12 weeks</a>
+      <a href="#packages">Packages</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-accent" href="https://wa.me/2348133345776">Free 15-min call</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section id="top" class="band hero">
+  <div class="wrap hero-row">
+    <div class="hero-copy">
+      <p class="pill"><i aria-hidden="true"></i>One-to-one research mentoring · Abuja and online</p>
+      <h1>Learn research.<br><em>Write it.</em> Defend it.</h1>
+      <p class="lede">A 12-week programme that takes you from your first idea to a defended proposal, one skill at a time.</p>
+      <div class="ctas">
+        <a class="btn btn-accent" href="https://wa.me/2348133345776"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 01-13.3 7.9L3 21l1.1-4.6A9 9 0 1121 12z"/></svg>Book a free 15-minute call</a>
+        <a class="btn btn-ghost" href="#journey">See the 12 weeks</a>
+      </div>
+      <div class="master">
+        <p>You will master</p>
+        <div class="tools">
+          <span>Google Scholar</span><span>Semantic Scholar</span><span>Turnitin</span><span>APA 7th</span>
+          <span class="secret"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>+ a secret AI toolkit</span>
+        </div>
+      </div>
+    </div>
+    <div class="visual">
+      <div class="app" role="region" aria-label="Animated research workflow: searching for papers, highlighting an abstract, checking similarity, then writing Chapter 1 in a document">
+        <div class="app-bar" aria-hidden="true"><i></i><i></i><i></i><span class="t" id="appTitle">Chapter1.docx</span></div>
+        <div class="steps-bar" role="group" aria-label="Jump to a research step">
+          <button type="button" class="st" aria-pressed="false"><b>1</b><span>Search</span></button>
+          <button type="button" class="st" aria-pressed="false"><b>2</b><span>Read</span></button>
+          <button type="button" class="st" aria-pressed="false"><b>3</b><span>Check</span></button>
+          <button type="button" class="st on" aria-pressed="true"><b>4</b><span>Write</span></button>
+        </div>
+        <div class="stage" aria-hidden="true">
+          <div class="scn" data-s="0">
+            <div class="gs-top">
+              <span class="gs-logo">Scholar</span>
+              <div class="sbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6259" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span class="qwrap"><span id="q">"research writing" <span class="op">AND</span> mentoring <span class="op">AND</span> (postgraduate <span class="op">OR</span> "final year")</span><i class="caret"></i></span></div>
+            </div>
+            <div class="gs-body">
+              <div class="gs-side"><span>Any time</span><span>Since 2026</span><span>Since 2025</span><span class="on">Since 2022</span><span>Custom range…</span><hr><span class="on">Sort by relevance</span><span>Sort by date</span><hr><span>Review articles</span></div>
+              <div class="gs-main">
+                <p class="gs-count">About 18,400 results (0.06 sec)</p>
+                <div class="res"><p class="rt"><span>Mentoring and research writing among postgraduate students in Nigeria</span><span class="pdf">[PDF]</span></p><p class="au">O Adeyemi, F Bello - Journal of Higher Education Research, 2023</p><p class="sn">… structured <b>mentoring</b> improved students’ ability to identify gaps and write stronger literature reviews …</p><p class="lk"><span>Cited by 214</span><span>Related articles</span><span>All 6 versions</span></p></div>
+                <div class="res"><p class="rt"><span>Identifying research gaps: a practical guide for early-career scholars</span><span class="pdf">[PDF]</span></p><p class="au">K Mensah - Research Methods Review, 2022</p><p class="sn">… <b>research writing</b> improves when students follow a staged process of searching, reading and synthesis …</p><p class="lk"><span>Cited by 98</span><span>Related articles</span><span>All 3 versions</span></p></div>
+                <div class="res"><p class="rt"><span>Academic writing support for <b>final year</b> students in African universities</span></p><p class="au">T Nwosu, L Garba - African Journal of Education, 2024</p><p class="sn">… <b>postgraduate</b> and undergraduate writers benefit from regular feedback on drafts …</p><p class="lk"><span>Cited by 41</span><span>Related articles</span></p></div>
+              </div>
+            </div>
+          </div>
+          <div class="scn" data-s="1">
+            <div class="pv-bar"><span>◀ 1 / 18 ▶</span><span>100%</span><span class="sp"></span><span class="tool on">Highlight</span><span class="tool">Comment</span><span class="tool">Draw</span></div>
+            <div class="pv-desk">
+              <div class="pv-page serif">
+                <div class="jr"><span>Journal of Higher Education Research</span><span>Vol. 12, No. 3 (2023)</span></div>
+                <h4>Mentoring and Research Writing among Postgraduate Students in Nigeria</h4>
+                <p class="au">Olu Adeyemi &amp; Fatima Bello</p>
+                <p class="ab"><b>ABSTRACT.</b> This study examined how structured mentoring shapes research writing among postgraduate students. Using a mixed-methods design with 240 students across four universities, it found that <span class="hl">students who received weekly feedback produced stronger literature reviews</span> and identified research gaps faster. However, <span class="hl h2x">few studies have tested such programmes in Nigerian universities</span>, which limits what we know about local contexts.</p>
+                <p class="kw"><i>Keywords:</i> mentoring; research writing; postgraduate education; Nigeria</p>
+                <div class="sticky"><small>Your note</small>Research gap: few studies in Nigerian universities</div>
+              </div>
+            </div>
+          </div>
+          <div class="scn" data-s="2">
+            <div class="sr-head"><span>Similarity Report · Chapter1.docx</span><span class="ai-chip">AI writing: 0%</span></div>
+            <div class="sr-body">
+              <div class="sr-left">
+                <div class="ring"><svg viewBox="0 0 110 110"><circle class="bg" cx="55" cy="55" r="46"/><circle class="fg" cx="55" cy="55" r="46"/></svg><div class="pct">7%<small>Overall</small></div></div>
+                <div class="brk"><div><span>Internet sources</span><b>4%</b></div><div><span>Publications</span><b>2%</b></div><div><span>Student papers</span><b>1%</b></div></div>
+              </div>
+              <div class="sr-right">
+                <p class="sr-doc serif">Research writing is a core skill for every postgraduate student, yet <span class="m1">many struggle to identify a clear research gap</span><sup>1</sup>. Structured mentoring has been shown to <span class="m2">improve literature reviews</span><sup>2</sup> and shorten the time to proposal approval. However, <span class="m3">few studies have tested such programmes</span><sup>3</sup> in Nigerian universities.</p>
+                <div>
+                  <div class="match"><i style="background: #C0392B;">1</i><span>Internet source · researchguide.example.org</span><b>3%</b></div>
+                  <div class="match"><i style="background: #2F6DB5;">2</i><span>Publication · Research Methods Review</span><b>2%</b></div>
+                  <div class="match"><i style="background: #4E8A35;">3</i><span>Submitted to a university</span><b>2%</b></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="scn on" data-s="3">
+            <div class="wd-tabs"><span>File</span><span class="on">Home</span><span>Insert</span><span>Design</span><span>Layout</span><span>References</span><span>Review</span><span>View</span></div>
+            <div class="wd-tools"><span class="sel serif">Times New Roman ▾</span><span class="sel">12 ▾</span><span class="div"></span><span class="b serif"><b>B</b></span><span class="b serif"><i>I</i></span><span class="b serif"><u>U</u></span><span class="div"></span><span class="b on"><svg width="14" height="12" viewBox="0 0 14 12" fill="none" stroke="#1E1410" stroke-width="1.4"><path d="M1 1h12M1 4.5h12M1 8h12M1 11.5h12"/></svg></span><span class="div"></span><span class="style on">Normal</span><span class="style">Heading 1</span><span class="style">Title</span></div>
+            <div class="wd-ruler"></div>
+            <div class="wd-desk">
+              <div class="wd-page serif">
+                <h4>CHAPTER ONE</h4>
+                <h4>INTRODUCTION</h4>
+                <h5>1.1 Background to the Study</h5>
+                <p><span id="typed">Research writing is a core skill for every postgraduate student, yet many struggle to identify a clear research gap (Adeyemi &amp; Bello, 2023). Structured mentoring has been shown to improve literature reviews and shorten the time to proposal approval (Mensah, 2022). However, few studies have tested such programmes in Nigerian universities. This study therefore examines how a 12-week mentoring programme improves research writing among postgraduate students in Nigeria.</span><i class="caret"></i></p>
+              </div>
+            </div>
+            <div class="wd-status"><span>Page 1 of 3 · <span id="wc">68 words</span> · English (Nigeria)</span><span>100%</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band campus" aria-label="Campus illustration">
+  <svg viewBox="0 0 1200 340" role="img" aria-label="Two students on campus follow a glowing research path: one carries books, the other heads confidently to the library, past cards reading paper found, gap identified and similarity 7 percent.">
+    <defs>
+      <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#F2C27F" stop-opacity="0.55"/><stop offset="1" stop-color="#F2C27F" stop-opacity="0"/></radialGradient>
+      <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8D9BF"/><stop offset="1" stop-color="#E0CDAE"/></linearGradient>
+      <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EBDDC6"/><stop offset="1" stop-color="#E1CFB2"/></linearGradient>
+      <linearGradient id="tree" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B3C69D"/><stop offset="1" stop-color="#6F8C5D"/></linearGradient>
+      <linearGradient id="tree2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C4D3B0"/><stop offset="1" stop-color="#83A06F"/></linearGradient>
+      <linearGradient id="facade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFDF8"/><stop offset="1" stop-color="#EFE3CF"/></linearGradient>
+      <linearGradient id="roof" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5A3725"/><stop offset="1" stop-color="#3A2318"/></linearGradient>
+      <linearGradient id="col" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E6D8C1"/></linearGradient>
+      <linearGradient id="door" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD9A0"/><stop offset="1" stop-color="#D9A56A"/></linearGradient>
+      <linearGradient id="spill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F2C27F" stop-opacity="0.6"/><stop offset="1" stop-color="#F2C27F" stop-opacity="0"/></linearGradient>
+      <linearGradient id="skinA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A2673B"/><stop offset="1" stop-color="#7A4520"/></linearGradient>
+      <linearGradient id="skinB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#835331"/><stop offset="1" stop-color="#5A341B"/></linearGradient>
+      <linearGradient id="hoodie" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9BB688"/><stop offset="1" stop-color="#617F51"/></linearGradient>
+      <linearGradient id="top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EDBE84"/><stop offset="1" stop-color="#C4864A"/></linearGradient>
+      <linearGradient id="pants" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3A2318"/><stop offset="1" stop-color="#21120B"/></linearGradient>
+      <linearGradient id="wrap" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B26A33"/><stop offset="1" stop-color="#7A4520"/></linearGradient>
+      <linearGradient id="bag" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A86A36"/><stop offset="1" stop-color="#6B3E1C"/></linearGradient>
+      <filter id="soft" x="-30%" y="-40%" width="160%" height="200%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#4A2C1D" flood-opacity="0.16"/></filter>
+      <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="4"/></filter>
+    </defs>
+
+    <!-- layer 1: far -->
+    <g class="px" data-depth="0.15">
+      <circle cx="1030" cy="130" r="210" fill="url(#sun)"/>
+      <g fill="#DCCBAE" opacity="0.55">
+        <rect x="30" y="226" width="64" height="80" rx="4"/><rect x="104" y="206" width="42" height="100" rx="4"/>
+        <path d="M166 306 V236 a34 34 0 0 1 68 0 V306Z"/><rect x="252" y="230" width="58" height="76" rx="4"/>
+        <rect x="640" y="236" width="70" height="70" rx="4"/><rect x="718" y="214" width="38" height="92" rx="4"/>
+      </g>
+    </g>
+
+    <!-- layer 2: hills and ground -->
+    <g class="px" data-depth="0.3">
+      <path d="M-40 268 C180 232 360 246 540 262 C720 278 880 236 1240 248 V360 H-40Z" fill="url(#hill)"/>
+    </g>
+    <rect x="-40" y="296" width="1280" height="60" fill="url(#ground)"/>
+    <path d="M-20 322 C320 312 720 318 1010 302" stroke="#F7EFE2" stroke-width="18" fill="none" stroke-linecap="round"/>
+
+    <!-- layer 3: trees and library -->
+    <g class="px" data-depth="0.5">
+      <rect x="114" y="226" width="10" height="74" rx="5" fill="#7A4E35"/>
+      <ellipse cx="119" cy="208" rx="44" ry="56" fill="url(#tree)"/>
+      <ellipse cx="104" cy="196" rx="16" ry="22" fill="#FFFFFF" opacity="0.14"/>
+      <rect x="555" y="244" width="9" height="56" rx="4.5" fill="#7A4E35"/>
+      <ellipse cx="559" cy="230" rx="32" ry="42" fill="url(#tree2)"/>
+      <rect x="1178" y="236" width="9" height="64" rx="4.5" fill="#7A4E35"/>
+      <ellipse cx="1182" cy="220" rx="34" ry="46" fill="url(#tree)"/>
+
+      <path class="beam" d="M1010 296 L1050 296 L1110 336 L950 336Z" fill="url(#spill)"/>
+      <rect x="905" y="288" width="250" height="12" rx="3" fill="#D9C7AC"/>
+      <rect x="915" y="278" width="230" height="12" rx="3" fill="#E9DCC6"/>
+      <rect x="925" y="160" width="210" height="120" rx="4" fill="url(#facade)"/>
+      <rect x="940" y="168" width="16" height="110" rx="3" fill="url(#col)"/>
+      <rect x="974" y="168" width="16" height="110" rx="3" fill="url(#col)"/>
+      <rect x="1070" y="168" width="16" height="110" rx="3" fill="url(#col)"/>
+      <rect x="1104" y="168" width="16" height="110" rx="3" fill="url(#col)"/>
+      <path d="M1010 278 V224 a20 20 0 0 1 40 0 V278Z" fill="url(#door)" class="beam"/>
+      <path d="M1030 278 V204 a20 20 0 0 0 -20 20 V278Z" fill="#4A2C1D" opacity="0.55"/>
+      <rect x="913" y="136" width="234" height="26" rx="4" fill="url(#roof)"/>
+      <text x="1030" y="154" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="14" font-weight="700" letter-spacing="6" fill="#FBF6EE">LIBRARY</text>
+      <path d="M903 136 L1030 82 L1157 136Z" fill="url(#roof)" stroke-linejoin="round"/>
+      <circle cx="1030" cy="116" r="10" fill="#D9A56A" class="pulse"/>
+    </g>
+
+    <!-- layer 4: students -->
+    <g class="px" data-depth="0.7">
+      <!-- student A -->
+      <g transform="translate(330 300)">
+        <g class="walk">
+          <ellipse cx="4" cy="0" rx="36" ry="6" fill="#4A2C1D" opacity="0.12"/>
+          <g class="bob">
+            <g class="leg two"><rect x="0" y="-64" width="13" height="60" rx="6.5" fill="url(#pants)"/><rect x="-3" y="-10" width="24" height="10" rx="5" fill="#FBF6EE"/><rect x="-3" y="-3" width="24" height="3" rx="1.5" fill="#D9C7AC"/></g>
+            <g class="leg"><rect x="-14" y="-64" width="13" height="60" rx="6.5" fill="url(#pants)"/><rect x="-17" y="-10" width="24" height="10" rx="5" fill="#FFFFFF"/><rect x="-17" y="-3" width="24" height="3" rx="1.5" fill="#D9C7AC"/></g>
+            <rect x="-42" y="-148" width="22" height="60" rx="10" fill="url(#bag)"/>
+            <path d="M-27 -140 Q-29 -160 0 -162 Q29 -160 27 -140 L25 -66 Q0 -58 -25 -66Z" fill="url(#hoodie)"/>
+            <path d="M-14 -96 H14 Q16 -82 0 -80 Q-16 -82 -14 -96Z" fill="#FFFFFF" opacity="0.16"/>
+            <path d="M-21 -150 Q-12 -122 -18 -96" stroke="#5A341B" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <rect x="14" y="-126" width="48" height="12" rx="3" fill="#E7B373"/>
+            <rect x="19" y="-114" width="43" height="12" rx="3" fill="#9A5B2A"/>
+            <rect x="12" y="-102" width="50" height="12" rx="3" fill="#4A2C1D"/>
+            <path d="M22 -120h30M27 -108h28M20 -96h34" stroke="#FFFFFF" stroke-width="1.5" opacity="0.55"/>
+            <rect x="48" y="-104" width="4" height="16" rx="1" fill="#C0392B"/>
+            <path d="M16 -146 Q36 -122 34 -96" stroke="url(#skinA)" stroke-width="11" fill="none" stroke-linecap="round"/>
+            <rect x="-6" y="-172" width="12" height="14" rx="4" fill="url(#skinA)"/>
+            <circle cx="-21" cy="-186" r="5" fill="#7A4520"/>
+            <circle cx="0" cy="-188" r="24" fill="url(#skinA)"/>
+            <path d="M-25 -190 C-27 -218 25 -221 24 -194 C16 -202 -2 -206 -25 -190Z" fill="#1F120C"/>
+            <path d="M5 -195 h7 M16 -195 h6" stroke="#1F120C" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="8" cy="-188" r="2.6" fill="#1A0F0A"/><circle cx="19" cy="-188" r="2.6" fill="#1A0F0A"/>
+            <circle cx="22" cy="-179" r="4" fill="#E58A68" opacity="0.35"/>
+            <path d="M8 -178 Q14 -172 20 -178" stroke="#1A0F0A" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+          </g>
+        </g>
+      </g>
+      <!-- student B -->
+      <g transform="translate(740 300)">
+        <g class="walk b">
+          <ellipse cx="4" cy="0" rx="36" ry="6" fill="#4A2C1D" opacity="0.12"/>
+          <g class="bob">
+            <g class="leg two"><path d="M0 -66 H15 L17 -6 H-2Z" fill="url(#pants)"/><rect x="-4" y="-10" width="24" height="10" rx="5" fill="#FBF6EE"/></g>
+            <g class="leg"><path d="M-15 -66 H0 L2 -6 H-17Z" fill="url(#pants)"/><rect x="-19" y="-10" width="24" height="10" rx="5" fill="#FFFFFF"/></g>
+            <g class="arm-swing"><path d="M-16 -146 Q-34 -120 -28 -96" stroke="url(#skinB)" stroke-width="11" fill="none" stroke-linecap="round"/><rect x="-46" y="-112" width="26" height="34" rx="4" fill="#2B1810" transform="rotate(-8 -33 -95)"/><rect x="-42" y="-107" width="18" height="22" rx="2" fill="#D9A56A" opacity="0.55" transform="rotate(-8 -33 -95)"/></g>
+            <path d="M-26 -140 Q-28 -160 0 -162 Q28 -160 26 -140 L27 -62 Q0 -54 -27 -62Z" fill="url(#top)"/>
+            <path d="M-8 -160 Q0 -150 8 -160" stroke="#FFFFFF" stroke-width="2.5" fill="none" opacity="0.6"/>
+            <path d="M16 -146 Q36 -158 52 -178" stroke="url(#skinB)" stroke-width="11" fill="none" stroke-linecap="round"/>
+            <circle cx="54" cy="-180" r="7" fill="#5A341B"/>
+            <rect x="-6" y="-172" width="12" height="14" rx="4" fill="url(#skinB)"/>
+            <circle cx="0" cy="-188" r="24" fill="url(#skinB)"/>
+            <circle cx="-20" cy="-172" r="3" fill="#F2C27F"/>
+            <path d="M-27 -192 C-29 -228 29 -230 27 -192 C16 -202 -14 -204 -27 -192Z" fill="url(#wrap)"/>
+            <ellipse cx="-6" cy="-222" rx="13" ry="10" fill="#B26A33"/>
+            <path d="M-20 -206 q9 -6 18 0 M3 -209 q9 -6 18 0" stroke="#F2C27F" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.9"/>
+            <circle cx="9" cy="-187" r="7" fill="#FFFFFF" fill-opacity="0.2" stroke="#1A0F0A" stroke-width="2"/>
+            <circle cx="25" cy="-187" r="7" fill="#FFFFFF" fill-opacity="0.2" stroke="#1A0F0A" stroke-width="2"/>
+            <path d="M16 -187 h2" stroke="#1A0F0A" stroke-width="2"/>
+            <circle cx="9" cy="-187" r="2.3" fill="#1A0F0A"/><circle cx="25" cy="-187" r="2.3" fill="#1A0F0A"/>
+            <path d="M8 -175 Q16 -168 24 -175" stroke="#1A0F0A" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+          </g>
+        </g>
+      </g>
+    </g>
+
+    <!-- layer 5: research path and floating cards -->
+    <g class="px" data-depth="1">
+      <path id="rpath" d="M398 176 C420 130 450 108 496 100 C560 90 470 160 548 186 C640 214 700 112 800 92 C900 72 980 56 1046 50 C1010 120 1036 210 1030 262" fill="none" stroke="#D9A56A" stroke-width="2.5" stroke-linecap="round" class="flow"/>
+      <circle r="12" fill="#F2C27F" opacity="0.55" filter="url(#glow)"><animateMotion dur="9s" repeatCount="indefinite" rotate="auto"><mpath href="#rpath"/></animateMotion></circle>
+      <circle r="5" fill="#8A5526"><animateMotion dur="9s" repeatCount="indefinite"><mpath href="#rpath"/></animateMotion></circle>
+
+      <g transform="translate(398 40)"><g class="float">
+        <rect width="196" height="58" rx="16" fill="#FFFDF8" fill-opacity="0.9" stroke="#FFFFFF" stroke-width="1.5" filter="url(#soft)"/>
+        <circle cx="29" cy="29" r="15" fill="#F1E5D2"/><path d="M23 21h9l5 5v11h-14z" fill="none" stroke="#8A5526" stroke-width="1.8" stroke-linejoin="round"/><path d="M26 30h8M26 34h6" stroke="#8A5526" stroke-width="1.6" stroke-linecap="round"/>
+        <text x="54" y="26" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#2B1810">Paper found</text>
+        <text x="54" y="43" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#6E5444">Adeyemi &amp; Bello, 2023</text>
+      </g></g>
+
+      <g transform="translate(452 150)"><g class="float d2">
+        <rect width="190" height="58" rx="16" fill="#FFFDF8" fill-opacity="0.9" stroke="#FFFFFF" stroke-width="1.5" filter="url(#soft)"/>
+        <circle cx="29" cy="29" r="15" fill="#E7EFE1"/><circle cx="27" cy="27" r="6" fill="none" stroke="#5E7A4F" stroke-width="2"/><path d="M31.5 31.5 l5 5" stroke="#5E7A4F" stroke-width="2.2" stroke-linecap="round"/>
+        <text x="54" y="26" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#2B1810">Gap identified</text>
+        <text x="54" y="43" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#6E5444">Few studies in Nigeria</text>
+      </g></g>
+
+      <g transform="translate(772 18)"><g class="float d3">
+        <rect width="232" height="54" rx="27" fill="#2B1810" filter="url(#soft)"/>
+        <path d="M36 52 L28 68 L52 53" fill="#2B1810"/>
+        <text x="116" y="24" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13.5" font-weight="600" fill="#FBF6EE">I already know what</text>
+        <text x="116" y="41" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13.5" font-weight="600" fill="#F2C27F">to look for.</text>
+      </g></g>
+
+      <g transform="translate(1046 8)"><g class="float d4">
+        <rect width="150" height="58" rx="16" fill="#FFFDF8" fill-opacity="0.92" stroke="#FFFFFF" stroke-width="1.5" filter="url(#soft)"/>
+        <circle cx="29" cy="29" r="15" fill="none" stroke="#EFE3CF" stroke-width="4"/><circle cx="29" cy="29" r="15" fill="none" stroke="#C0392B" stroke-width="4" stroke-dasharray="6.6 94.2" transform="rotate(-90 29 29)" stroke-linecap="round"/>
+        <text x="54" y="26" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#2B1810">Similarity 7%</text>
+        <text x="54" y="43" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#6E5444">APA 7th ✓</text>
+      </g></g>
+    </g>
+  </svg>
+</section>
+
+<section class="band" aria-label="Programme in numbers">
+  <div class="wrap stats">
+    <div><b>12</b><span>weeks</span></div>
+    <div><b>30</b><span>one-to-one sessions</span></div>
+    <div><b>6</b><span>in-person workshops</span></div>
+    <div><b>1</b><span>defended proposal</span></div>
+  </div>
+</section>
+
+<section class="band familiar" aria-labelledby="f-h">
+  <div class="wrap">
+    <div class="fam-head">
+      <div><p class="eyebrow">Sound familiar?</p><h2 id="f-h">Every researcher hits <em>these walls.</em></h2></div>
+      <p>Each one has a week in the programme built to break it down.</p>
+    </div>
+    <div class="pains">
+      <div class="pain"><div class="q"><p>I don’t know where to start.</p></div><div class="fix"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D9A56A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><div><small>Fixed in week 1</small><span>Find your research direction</span></div></div></div>
+      <div class="pain"><div class="q"><p>I can’t find the right papers.</p></div><div class="fix"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D9A56A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><div><small>Fixed in week 1</small><span>Search like a researcher</span></div></div></div>
+      <div class="pain"><div class="q"><p>I’m scared of plagiarism.</p></div><div class="fix"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D9A56A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><div><small>Fixed in week 2</small><span>APA 7th and a live Turnitin check</span></div></div></div>
+      <div class="pain"><div class="q"><p>My supervisor keeps sending it back.</p></div><div class="fix"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D9A56A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><div><small>Fixed in weeks 3–4</small><span>A polished Chapter 1</span></div></div></div>
+      <div class="pain"><div class="q"><p>Methodology confuses me.</p></div><div class="fix"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D9A56A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><div><small>Fixed in week 7</small><span>Design your methodology</span></div></div></div>
+      <div class="pain"><div class="q"><p>My defence makes me nervous.</p></div><div class="fix"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D9A56A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><div><small>Fixed in week 12</small><span>A full mock defence</span></div></div></div>
+    </div>
+    <div class="fam-foot">
+      <p>You’re in the right place.</p>
+      <a class="btn btn-accent" href="https://wa.me/2348133345776">Start with a free call</a>
+    </div>
+  </div>
+</section>
+
+<section id="for" class="band who" style="padding-block: 64px 104px;" aria-labelledby="w-h">
+  <div class="wrap">
+    <p class="eyebrow">Who it’s for</p>
+    <h2 id="w-h" class="h2">For people who want to learn research <em style="font-weight: 500; color: var(--rust);">the right way.</em></h2>
+    <div class="grid g5">
+      <div class="card"><span class="ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E0B27A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 012-2h12v16H6a2 2 0 00-2 2V5z"/><path d="M4 19a2 2 0 012-2h12M9 7h5"/></svg></span><h3>Final-year undergraduates</h3><p>Your first project, done right.</p></div>
+      <div class="card"><span class="ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E0B27A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5-10-5z"/><path d="M6 11v5c2 2 10 2 12 0v-5"/></svg></span><h3>Master’s students</h3><p>From topic to defended proposal.</p></div>
+      <div class="card"><span class="ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E0B27A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 012-2h9l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M14 3v5h5M8 13h8M8 17h5"/></svg></span><h3>PhD students</h3><p>A stronger study, faster.</p></div>
+      <div class="card"><span class="ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E0B27A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H4z"/><path d="M8 20h8M12 16v4"/></svg></span><h3>Early-career academics</h3><p>Write and publish with confidence.</p></div>
+      <div class="card"><span class="ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E0B27A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></span><h3>Professionals</h3><p>Policy, NGO and public-sector researchers.</p></div>
+    </div>
+    <div class="fit">
+      <div class="fit-yes">
+        <p class="fit-k">This is for you if</p>
+        <ul>
+          <li>You want to understand every step, not just finish</li>
+          <li>You’ll read, write and practise between sessions</li>
+          <li>You want work you can defend with confidence</li>
+        </ul>
+      </div>
+      <div class="fit-no">
+        <p class="fit-k">This is not for you if</p>
+        <ul>
+          <li>You want someone to write it for you</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="journey" class="band tan sec" aria-labelledby="j-h">
+  <div class="wrap">
+    <div class="jhead">
+      <div><p class="eyebrow">The journey</p><h2 id="j-h" class="h2">12 weeks. 12 skills.</h2></div>
+      <div class="legend"><span><i class="ring" aria-hidden="true"></i>2 online sessions</span><span><i class="dot" aria-hidden="true"></i>+ in-person workshop</span></div>
+    </div>
+    <div class="months">
+      <div class="month">
+        <div class="mhead m1"><small>Month 1 · Weeks 1–4</small><b>Find your direction</b></div>
+        <div class="weeks">
+          <div class="wk"><div class="top"><span class="num">1</span>online</div><b>Find your direction and topic</b><p>Research direction + possible topics</p></div>
+          <div class="wk p"><div class="top"><span class="num">2</span>+ in person</div><b>Read and cite correctly</b><p>Chosen topic + Turnitin report</p></div>
+          <div class="wk"><div class="top"><span class="num">3</span>online</div><b>Draft your Chapter 1</b><p>Chapter 1 draft</p></div>
+          <div class="wk p"><div class="top"><span class="num">4</span>+ in person</div><b>Write like an academic</b><p>Polished Chapter 1</p></div>
+        </div>
+      </div>
+      <div class="month">
+        <div class="mhead m2"><small>Month 2 · Weeks 5–8</small><b>Build your study</b></div>
+        <div class="weeks">
+          <div class="wk"><div class="top"><span class="num">5</span>online</div><b>Write the literature review</b><p>Synthesis matrix + first section</p></div>
+          <div class="wk p"><div class="top"><span class="num">6</span>+ in person</div><b>Build your framework</b><p>Chapter 2 draft</p></div>
+          <div class="wk"><div class="top"><span class="num">7</span>online</div><b>Design your methodology</b><p>Methodology matrix</p></div>
+          <div class="wk p"><div class="top"><span class="num">8</span>+ in person</div><b>Build your instruments</b><p>Chapter 3 draft + instrument</p></div>
+        </div>
+      </div>
+      <div class="month">
+        <div class="mhead m3"><small>Month 3 · Weeks 9–12</small><b>Sharpen with AI and defend</b></div>
+        <div class="weeks">
+          <div class="wk"><div class="top"><span class="num">9</span>online</div><b>Research with AI</b><p>AI research notebook + gap list</p></div>
+          <div class="wk p"><div class="top"><span class="num">10</span>+ in person</div><b>AI as your research assistant</b><p>Sharper objectives, method, theory</p></div>
+          <div class="wk"><div class="top"><span class="num">11</span>online</div><b>Finalise and present</b><p>Full proposal + slides</p></div>
+          <div class="wk p"><div class="top"><span class="num">12</span>+ in person</div><b>Defend and plan to publish</b><p>Defence-ready + target journal</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band dark ai" aria-labelledby="ai-h">
+  <div class="wrap ai-row">
+    <div class="ai-copy">
+      <p class="eyebrow lockline"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>Unlocks in month 3</p>
+      <h2 id="ai-h">The AI toolkit serious researchers <em>don’t talk about.</em></h2>
+      <p>First you master research by hand. Then we unlock the tools that make it fast.</p>
+    </div>
+    <div class="locked">
+      <div class="lk"><span class="redact" style="width: 96px;" aria-hidden="true"></span><b>Reads your papers for you</b></div>
+      <div class="lk"><span class="redact" style="width: 80px;" aria-hidden="true"></span><b>Finds research gaps</b></div>
+      <div class="lk"><span class="redact" style="width: 112px;" aria-hidden="true"></span><b>Sharpens your objectives</b></div>
+      <div class="lk"><span class="redact" style="width: 72px;" aria-hidden="true"></span><b>Builds your defence slides</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="band sec" aria-labelledby="h-h">
+  <div class="wrap">
+    <p class="eyebrow">How it starts</p>
+    <h2 id="h-h" class="h2">Three simple steps.</h2>
+    <ol class="grid g3 steps">
+      <li class="card"><p class="big">01</p><b>Free 15-minute call</b><p>Tell me where you are.</p></li>
+      <li class="card"><p class="big">02</p><b>Find your direction</b><p>Week 1 starts with you.</p></li>
+      <li class="card last"><p class="big">03</p><b>Build it, week by week</b><p>One skill, one result, every week.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" style="padding-block: 0 104px;" aria-labelledby="m-h">
+  <div class="wrap card mentor">
+    <div class="mphoto"><img src="images/mentor.jpg" alt="Joshua Olatunji OLADAPO, smiling, in a black kaftan and cap" width="720" height="1080"></div>
+    <div class="mcopy">
+      <p class="eyebrow">Your mentor</p>
+      <h2 id="m-h">Joshua Olatunji OLADAPO</h2>
+      <p class="role">Lecturer, Mass Communication · National Open University of Nigeria</p>
+      <div class="chips"><span class="chip">Journalism</span><span class="chip">AI and Journalism</span><span class="chip">New media</span><span class="chip">Visual communication</span><span class="chip">Strategic communication</span><span class="chip">Education</span></div>
+      <p class="motto">“You write. I teach and guide. Your research stays yours.”</p>
+    </div>
+  </div>
+</section>
+
+<section id="packages" class="band tan sec" aria-labelledby="pk-h">
+  <div class="wrap">
+    <p class="eyebrow">Packages</p>
+    <h2 id="pk-h" class="h2">Choose how you learn.</h2>
+    <div class="grid g3" style="gap: 18px;">
+      <div class="card pk">
+        <div><h3>Research Clinic</h3><p class="sub">One focused session</p></div>
+        <p class="price">₦20,000</p>
+        <ul><li>Any single topic</li><li>Online, 1 hour</li><li>Written action plan</li></ul>
+        <a class="btn btn-line" href="https://wa.me/2348133345776">Book a clinic</a>
+      </div>
+      <div class="card pk feat">
+        <span class="badge">Most complete</span>
+        <div><h3>1-to-1 Mentorship</h3><p class="sub">The full 12-week journey</p></div>
+        <div><p class="price">₦180,000</p><p class="per">per month · 12 hours of teaching</p></div>
+        <ul><li>10 sessions a month</li><li>8 online · 2 in person</li><li>Feedback on every draft</li><li>The AI toolkit in month 3</li></ul>
+        <a class="btn btn-accent" href="https://wa.me/2348133345776">Start with a free call</a>
+      </div>
+      <div class="card pk">
+        <div><h3>Small-Group Cohort</h3><p class="sub">Learn alongside others</p></div>
+        <p class="price">Coming soon</p>
+        <ul><li>Same 12-week journey</li><li>Small groups</li><li>Lower monthly fee</li></ul>
+        <a class="btn btn-line" href="https://wa.me/2348133345776">Join the waitlist</a>
+      </div>
+    </div>
+    <p class="note">Paid monthly in advance.</p>
+  </div>
+</section>
+
+<section id="faq" class="band sec" aria-labelledby="q-h">
+  <div class="faq">
+    <h2 id="q-h" class="h2">Questions</h2>
+    <div class="faq-list">
+      <details><summary>Will you write my thesis for me?</summary><p>No. You write; I teach, review and guide. Your work stays yours.</p></details>
+      <details><summary>Online or in person?</summary><p>Both. Online sessions every week, plus an in-person workshop in Abuja every other week.</p></details>
+      <details><summary>I’m a complete beginner. Is that okay?</summary><p>Yes. Week 1 starts from zero.</p></details>
+      <details><summary>Which AI tools will I learn?</summary><p>You’ll find out in month 3.</p></details>
+      <details><summary>How do I pay?</summary><p>Monthly, in advance. Ask on WhatsApp for details.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band" style="padding-block: 0 104px;" aria-labelledby="c-h">
+  <div class="wrap dark cta">
+    <div class="o1" aria-hidden="true"></div><div class="o2" aria-hidden="true"></div>
+    <div class="cta-in">
+      <h2 id="c-h">Your research journey starts with <em>one call.</em></h2>
+      <p class="lede">Free. 15 minutes. No pressure.</p>
+      <a class="btn btn-accent" href="https://wa.me/2348133345776"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 01-13.3 7.9L3 21l1.1-4.6A9 9 0 1121 12z"/></svg>Chat on WhatsApp</a>
+      <p class="contact">+234 813 334 5776 · oladapojo49@gmail.com</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="band">
+  <div class="wrap"><span>Research Journey · Research mentoring, Abuja and online</span><span>Joshua Olatunji OLADAPO</span></div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var scenes = document.querySelectorAll('.scn');
+  var steps = document.querySelectorAll('.st');
+  var title = document.getElementById('appTitle');
+  var q = document.getElementById('q');
+  var typed = document.getElementById('typed');
+  var wc = document.getElementById('wc');
+  if (!scenes.length || !q || !typed) return;
+  var titles = ['Scholar search', 'Adeyemi_Bello_2023.pdf', 'Similarity Report', 'Chapter1.docx · Saved'];
+  var query = q.textContent;
+  var queryHtml = q.innerHTML;
+  var text = typed.textContent;
+  var gen = 0; // bumps on every jump, so timers from the old run stop
+  function go(i) {
+    scenes.forEach(function (s, k) { s.classList.toggle('on', k === i); s.classList.remove('show'); });
+    steps.forEach(function (s, k) { s.classList.toggle('on', k === i); s.setAttribute('aria-pressed', k === i ? 'true' : 'false'); });
+    title.textContent = titles[i];
+  }
+  function later(g, fn, ms) { setTimeout(function () { if (g === gen) fn(); }, ms); }
+  function words() { var t = typed.textContent.trim(); wc.textContent = (t ? t.split(/\s+/).length : 0) + ' words'; }
+  function type(g, el, str, speed, done, onChar) {
+    var n = 0;
+    el.textContent = '';
+    (function tick() {
+      if (g !== gen) return;
+      n++;
+      el.textContent = str.slice(0, n);
+      if (onChar) onChar();
+      if (n < str.length) setTimeout(tick, speed); else later(g, done, 300);
+    })();
+  }
+  function finish(i) {
+    // full, static state of a step (used when motion is reduced)
+    q.innerHTML = queryHtml;
+    typed.textContent = text;
+    words();
+    scenes[i].classList.add('show');
+  }
+  function step(i, g) {
+    go(i);
+    if (i === 0) {
+      type(g, q, query, 45, function () {
+        q.innerHTML = queryHtml;
+        scenes[0].classList.add('show');
+        later(g, function () { step(1, g); }, 2600);
+      });
+    } else if (i === 1) {
+      later(g, function () { scenes[1].classList.add('show'); }, 150);
+      later(g, function () { step(2, g); }, 4200);
+    } else if (i === 2) {
+      later(g, function () { scenes[2].classList.add('show'); }, 150);
+      later(g, function () { step(3, g); }, 3600);
+    } else {
+      type(g, typed, text, 22, function () { later(g, function () { step(0, g); }, 2800); }, words);
+    }
+  }
+  function play(i) {
+    gen++;
+    if (reduce) { go(i); finish(i); return; }
+    step(i, gen);
+  }
+  steps.forEach(function (s, k) { s.addEventListener('click', function () { play(k); }); });
+  if (!reduce) setTimeout(function () { if (gen === 0) play(0); }, 1200);
+})();
+</script>
+
+<script>
+(function () {
+  var sec = document.querySelector('.campus');
+  if (!sec) return;
+  var svg = sec.querySelector('svg');
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (svg && svg.pauseAnimations) svg.pauseAnimations();
+    return;
+  }
+  var layers = Array.prototype.slice.call(sec.querySelectorAll('.px')).map(function (el) {
+    return { el: el, d: parseFloat(el.getAttribute('data-depth')) || 0 };
+  });
+  var tx = 0, ty = 0, cx = 0, cy = 0, visible = true, raf = 0;
+  window.addEventListener('pointermove', function (e) {
+    tx = (e.clientX / window.innerWidth - 0.5) * 2;
+    ty = (e.clientY / window.innerHeight - 0.5) * 2;
+  }, { passive: true });
+  function frame() {
+    cx += (tx - cx) * 0.07;
+    cy += (ty - cy) * 0.07;
+    var r = sec.getBoundingClientRect();
+    var s = (r.top + r.height / 2 - window.innerHeight / 2) / window.innerHeight;
+    layers.forEach(function (l) {
+      var x = cx * l.d * 16;
+      var y = cy * l.d * 6 + s * l.d * 26;
+      l.el.style.transform = 'translate(' + x.toFixed(2) + 'px,' + y.toFixed(2) + 'px)';
+    });
+    raf = visible ? requestAnimationFrame(frame) : 0;
+  }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (en) {
+      visible = en[0].isIntersecting;
+      if (visible && !raf) raf = requestAnimationFrame(frame);
+    }).observe(sec);
+  } else {
+    raf = requestAnimationFrame(frame);
+  }
+})();
+</script>
+
+<a class="wa" href="https://wa.me/2348133345776" aria-label="Chat on WhatsApp"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2B1810" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 01-13.3 7.9L3 21l1.1-4.6A9 9 0 1121 12z"/></svg></a>
+
+</body>
+</html>
